@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- PAGES TITLE -->
+    <title>Book Shop</title>
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="assets/src/css/index.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
-    
-    <script src=""></script>
+    <div id="container">
+        <header>
+            <div id="topHeader">
+                <div id="LoginAndBasket">
+                    <button id="loginBtn">
+                        <span>ورود / ثبت نام</span>
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                    <div id="userBasket">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </div>
+
+                </div>
+                <nav id="menu">
+                    <ul>
+                        <li><span>تماس با ما</span></li>
+                        <li><span>صفحات</span></li>
+                        <li><span>دسته بندی</span></li>
+                        <li><span>مجموعه</span></li>
+                        <li><span>کتاب ها</span></li>
+                        <li><span>صفحه اصلی</span></li>
+                        <img src="assets/images/logo-book-shop.png">
+                    </ul>
+                </nav>
+            </div>
+            <div id="introduce">
+                <div id="model">
+                    <div id="bg">
+                        <img src="assets/images/layer-slider-1.png">
+                    </div>
+                    <div id="pos">
+                        <img id="girl" src="assets/images/layer-slider-model.png">
+                    </div>
+                </div>
+                <div id="titlesPage">
+                    <h2>مجموعه عظیم <br> از <span>بهترین کتاب ها</span></h2>
+                    <p>کتاب آنلاین منبعی به شکل کتاب است که فقط برای مطالعه در اینترنت در دسترس است. این کتاب با ایده
+                        رایج یک کتاب الکترونیکی متفاوت است</p>
+                    <div id="searchBox">
+                        <input type="text" placeholder="کتاب نمیتوانی به من آسیب بزنی">
+                        <div id="iconBox">
+                            <span>جستجو</span>
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="booksTitle">
+                <div id="daste-bandi">
+                    <span id="lineBefore"></span>
+                    <span id="daste-bandi-txt">دسته بندی</span>
+                    <span id="lineAfter"></span>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+
+    <script defer src="assets/src/js/index.js"></script>
 </body>
+
 </html>
