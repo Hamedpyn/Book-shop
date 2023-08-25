@@ -10,6 +10,12 @@
     box-sizing: border-box;
 }
 
+:is(#userBasket, #LoginAndBasket, body, ul, #introduce) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     height: auto;
     background-color: #fff;
@@ -58,12 +64,6 @@ header {
 
 :is(#loginBtn, #userBasket) {
     cursor: pointer;
-}
-
-:is(#userBasket, #LoginAndBasket, body, ul, #introduce) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #userBasket {
@@ -580,6 +580,11 @@ nav>ul>li>ul {
 
 #mostTitle {
     margin-right: -18rem;
+    align-items: flex-end;
+}
+
+#mostTitle span {
+    line-height: 30px;
 }
 
 #mostSell img {
@@ -660,4 +665,12 @@ nav>ul>li>ul {
 #mostSellBooks {
     margin-right: 50px;
     margin-left: 50px;
+}
+
+#booksTitle>* {
+    user-select: none;
+}
+
+nav>* {
+    user-select: none;
 }
