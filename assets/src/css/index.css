@@ -947,3 +947,103 @@ main {
     margin-bottom: 30px;
     margin-top: -40px;
 }
+
+.author {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.facebook {
+    color: #3B5998;
+}
+
+.insta {
+    color: #BE2A8D;
+}
+
+.authorImage img {
+    width: 310px;
+    height: 310px;
+    border-radius: 100%;
+    transition: all 0.3s;
+    opacity: 5;
+}
+
+.authorIcons i {
+    border-radius: 40px;
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    font-size: 23px;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 1;
+}
+
+.authorIcons i:hover {
+    scale: 1.1;
+}
+
+.authorIcons {
+    display: flex;
+    gap: 10px;
+    margin-top: -50px;
+}
+
+.topDetails:hover .authorImage img {
+    filter: opacity(60%);
+}
+
+.authorDetails h4 {
+    font-size: 25px;
+}
+
+.authorDetails {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.authorDetails span {
+    color: #4d4d4d;
+}
+
+.topDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#authorSection {
+    display: flex;
+    gap: 25px;
+}
+
+#authors {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#popularAuthor {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.twitter {
+    color: #00ACED;
+}
+
+.tel {
+    color: #00ACED;
+}
+
+.whatsapp {
+    color: #1fff3d;
+}
