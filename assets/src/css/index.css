@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
     font-family: 'Noto Sans Arabic', sans-serif;
@@ -8,9 +9,10 @@
     outline: none;
     border: none;
     box-sizing: border-box;
+    list-style: none;
 }
 
-:is(#userBasket, #LoginAndBasket, body, ul, #introduce) {
+:is(#userBasket, #LoginAndBasket, body, nav > ul, #introduce) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +20,6 @@
 
 body {
     height: auto;
-    overflow-x: hidden;
     background-color: #fff;
 }
 
@@ -35,7 +36,7 @@ header {
     border-radius: 0px 0px 0px 60px;
     height: 800px;
     overflow: hidden;
-    margin-left: 160px;
+    margin-left: 133px;
 }
 
 :is(#topHeader, #menu ul, ) {
@@ -58,7 +59,7 @@ header {
     transition: background-color 0.3s;
 }
 
-:is(#loginBtn, #iconBox):hover {
+:is(#loginBtn, .iconBox):hover {
     background-color: #222;
 }
 
@@ -359,7 +360,7 @@ nav>ul>li>ul {
 }
 
 /*  */
-#searchBox {
+.searchBox {
     text-align: right;
     display: flex;
     flex-direction: row-reverse;
@@ -372,14 +373,14 @@ nav>ul>li>ul {
     position: relative;
 }
 
-#searchBox input {
+.searchBox input {
     text-align: right;
     width: 330px;
     padding-right: 20px;
     background-color: transparent;
 }
 
-#iconBox {
+.iconBox {
     background: #758BFD;
     color: #fff;
     width: 100px;
@@ -388,8 +389,8 @@ nav>ul>li>ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 3px;
-    margin-bottom: 3px;
+    margin-left: 4px;
+    margin-bottom: 2px;
     cursor: pointer;
     gap: 7px;
     transition: background-color 0.3s;
@@ -694,9 +695,9 @@ main {
 }
 
 #most {
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     background-color: #F1F2F6;
-    width: 1000%;
+    width: 119%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -803,7 +804,7 @@ main {
     transition: all 0.3s;
 }
 
-#most > * {
+#most>* {
     user-select: none;
 }
 
@@ -825,7 +826,7 @@ main {
 .text {
     width: 300px;
     text-align: center;
-    font-size:18px;
+    font-size: 18px;
 }
 
 .comments {
@@ -902,9 +903,9 @@ main {
 }
 
 #percent {
-    width:1300px;
+    width: 1300px;
     background-size: cover;
-    background-image: linear-gradient(90deg,rgba(32,48,129,.8),rgba(32,48,129,.8)),url("https://xtratheme.ir/book-shop/wp-content/uploads/sites/112/2021/09/box-bg.jpeg");
+    background-image: linear-gradient(90deg, rgba(32, 48, 129, .8), rgba(32, 48, 129, .8)), url("https://xtratheme.ir/book-shop/wp-content/uploads/sites/112/2021/09/box-bg.jpeg");
     color: #fff;
     display: flex;
     align-items: center;
@@ -1046,4 +1047,207 @@ main {
 
 .whatsapp {
     color: #1fff3d;
+}
+
+#popularAuthor {
+    user-select: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#latestNews {
+    background-color: #758BFD;
+    color: #fff;
+    width: 1200px;
+    border-radius: 40px;
+    height: 400px;
+    z-index: 1;
+}
+
+#news>.searchBox {
+    font-size: 14px;
+    width: 500px;
+    margin-top: -20px;
+}
+
+#newsBtn {
+    background-color: #27187E !important;
+    width: 150px;
+    font-size: 13px;
+}
+
+#news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+#footerMenu {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 150px;
+}
+
+#siteDetails {
+    width: 1300px;
+    background-color: #F1F2F6;
+    border-radius: 40px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -90px;
+}
+
+.fMenu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#theQuote p {
+    width: 200px;
+    font-size: 15px;
+}
+
+#quoteAuthor {
+    color: #758BFD;
+}
+
+#quote {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.fMenu ul h4 {
+    margin-bottom: 30px;
+    font-size: 17px;
+    position: relative;
+}
+
+.fMenu ul li {
+    font-size: 14px;
+    color: #7e7e7e;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.fMenu ul li:hover {
+    color: #758BFD;
+}
+
+#devDetails {
+    background-color: #758BFD;
+    color: #fff;
+    width: 1200px;
+    height: 120px;
+    border-radius: 40px 40px 0px 0px;
+    margin-top: -80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#dev {
+    display: flex;
+    gap: 200px;
+}
+
+#devText p {
+    font-size: 13px;
+}
+
+#brandsIcon a i {
+    color: #000000;
+    font-size: 23px;
+    transition: all 0.3s;
+}
+
+#brandsIcon a {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+#brandsIcon {
+    display: flex;
+    gap: 10px;
+}
+
+#devEmail a {
+    color: #fff;
+    font-family: poppins;
+    font-size: 14px;
+}
+
+#instagram:hover {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+    scale: 1.1;
+}
+
+#instagram:hover #instaI {
+    color: #fff;
+}
+
+#what:hover {
+    background-color: #25d366;
+    scale: 1.1;
+}
+
+#what:hover #ws {
+    color: #fff;
+}
+
+#telegram:hover {
+    background-color: #2AABEE;
+    scale: 1.1;
+}
+
+#telegram:hover #tl {
+    color: #fff;
+}
+
+#github:hover {
+    scale: 1.1;
+    background-color: #171515;
+}
+
+#github:hover #gh {
+    color: #fff;
+}
+
+.fMenu {
+    border-right: 1px solid #d8d8d8;
+    padding-right: 24px;
+    height: 230px;
+    padding-top: 10px;
+}
+
+.fMenu ul > h4::after {
+    content: "";
+    position: absolute;
+    background-color: #758bfd;
+    width: 5px;
+    height: 30px;
+    border-radius: 50px;
+    top: 5px;
+    right: -27px;
+    left: auto;
 }
