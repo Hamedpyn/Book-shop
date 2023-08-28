@@ -95,7 +95,6 @@ function setBtnPagination() {
 
     for (let i = 1; i < counter + 1; i++) {
         let btn = createNewBtn(i)
-        console.log(btn)
         allBtn.appendChild(btn)
     }
 }
