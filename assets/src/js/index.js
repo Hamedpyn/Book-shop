@@ -2,14 +2,8 @@
 const booksLi = document.querySelector('#books');
 const watchBookPage = document.querySelector('#watch-BookPage');
 const container = document.querySelector('#container');
-const booksPageContainer = document.querySelector('#booksPageContainer');
-const spinner = document.querySelector('#spinner');
-const thisBookPage = document.querySelector('#thisBookPage');
-const thisFirstPage = document.querySelector('#thisFirstPage');
-const firstPage = document.querySelector('#firstPage');
-const allBtn = document.querySelector('#allBtn');
 const bodyEl = document.body;
-const booksObject = document.querySelector("#booksObject");
+const containerBasket = document.querySelector("#containerBasket");
 
 // Sample book data
 const allBooks = [
@@ -31,33 +25,180 @@ const allBooks = [
 booksLi.addEventListener('click', openBookPage)
 watchBookPage.addEventListener('click', openBookPage)
 
-
 // Function to open book page
 function openBookPage() {
+    container.style.display = "none";
 
-    toggleVisibility(container, spinner)
-    bodyEl.style.backgroundColor = '#fff';
+    bodyEl.style.backgroundColor = '';
+    booksPageHtml()
+    const thisBookPage = document.querySelector('#thisBookPage');
+    thisBookPage.classList.add("active")
+}
 
-    setTimeout(() => {
-        spinner.style.display = 'none';
-        bodyEl.style.backgroundColor = '';
-        booksPageContainer.style.display = 'block'
-    }, 800)
-
-    thisBookPage.classList = 'active';
-
-    // Event listener for going back to the first page
-    thisFirstPage.addEventListener('click', () => {
-        toggleVisibility(booksPageContainer, spinner)
-
-        bodyEl.style.backgroundColor = '#fff';
-        setTimeout(() => {
-            spinner.style.display = 'none';
-            bodyEl.style.backgroundColor = '';
-            container.style.display = 'block'
-        }, 800)
-        firstPage.classList = 'active';
-    })
+function booksPageHtml() {
+    bodyEl.innerHTML += `<div id="booksPageContainer">
+    <header id="booksHeader">
+        <div class="header">
+            <div class="topHeader">
+                <div class="LoginAndBasket">
+                    <button class="loginBtn"><span>ورود / ثبت نام</span><i class="fa-solid fa-user"></i></button><div id="bookBasket" class="userBasket">    <i class="fa-solid fa-basket-shopping"></i></div></div><nav class="menu"><ul>        <li><span>تماس با ما</span></li><li><span><i class="fa-solid fa-chevron-down"></i>صفحات </span><ul class="pages">                <li><span>وبلاگ</span></li>                <li><span>درباره ما</span></li>                <li><span>سوالات متداول</span></li><li><span><i class="fa-solid fa-chevron-left"></i><span>منوی کشویی <ul class="underMenu">                                <li>زیر منو 1</li>
+                               <li>زیر منو 2</li>                                <li>زیر منو 3</li>
+                                            </ul>
+                                        </span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>دسته بندی</span>
+                        </li>
+                        <li>
+                            <span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                                مجموعه
+                            </span>
+                            <ul class="collection">
+                                <li>
+                                    <img src="assets/images/book-10.jpg">
+                                    <span class="historical">کتاب های تاریخی</span>
+                                </li>
+                                <li>
+                                    <img src="assets/images/book-9-removebg-preview.png">
+                                    <span class="trade">کتاب های ارز مجازی</span>
+                                </li>
+                                <li>
+                                    <img src="assets/images/package3-1-removebg-preview.png">
+                                    <span class="art">کتاب های هنر و گرافیک</span>
+                                </li>
+                                <li>
+                                    <img src="assets/images/package2-1-300x300-removebg-preview.png">
+                                    <span class="biography">کتاب های بیوگرافی</span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span id=thisBookPage>کتاب ها</span></li>
+                        <li id="thisFirstPage"><a href="index.html"><span>صفحه اصلی</span></a></li>
+                        <img src="assets/images/logo-book-shop.png">
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="pagesStatus">
+            <div id="statusPage">
+                <div id="rightStatus">
+                    <span>فروشگاه</span>
+                </div>
+                <div id="leftStatus">
+                    <span>محصولات</span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <i class="fa-solid fa-house-chimney"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <div id="mostBook" class="most">
+            <div class="all-books">
+                <div id="booksObject" class="allBooks">
+                </div>
+            </div>
+        </div>
+        <div id="booksButtons">
+            <div style="display: flex;
+            gap: 6px;" id="allBtn">
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div id="latestNews">
+            <div id="news">
+                <div class="grouping">
+                    <span id="newsBtn" class="grouping-txt">دریافت تخفیف ویژه</span>
+                </div>
+                <div class="titlesOfBookPage">
+                    <h1>برای اخبار جدید به ما بپیوندید</h1>
+                </div>
+                <div class="searchBox">
+                    <input type="text" placeholder="... ایمیل خود را وارد کنید">
+                    <div class="iconBox">
+                        <span>عضویت</span>
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="siteDetails">
+            <div id="footerMenu">
+                <div id="quote">
+                    <img src="assets/images/logo-book-shop.png">
+                    <div id="theQuote">
+                        <p>وقتی راه را به صورت واضح درک کردید , میتوانید آن را در همه چیز ببینید</p>
+                    </div>
+                    <div id="quoteAuthor">میاموتو موساشی</div>
+                </div>
+                <div class="fMenu" id="specialMenu">
+                    <ul>
+                        <h4>منو سفارشی</h4>
+                        <li>صفحه اصلی</li>
+                        <li>کتاب ها</li>
+                        <li>مجموعه</li>
+                        <li>دسته بندی</li>
+                    </ul>
+                </div>
+                <div class="fMenu" id="support">
+                    <ul>
+                        <h4>پشتیبانی</h4>
+                        <li>سوالات متداول</li>
+                        <li>قوانین</li>
+                        <li>سیاست و قوانین</li>
+                        <li>گزارش</li>
+                    </ul>
+                </div>
+                <div class="fMenu" id="aboutUs">
+                    <ul>
+                        <h4>درباره ما</h4>
+                        <li>درباره ما</li>
+                        <li>شرکا</li>
+                        <li>چشم انداز</li>
+                        <li>تماس با ما</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="devDetails">
+            <div id="dev">
+                <div id="brandsIcon">
+                    <a id="instagram" href="https://instagram.com/hamedpyn">
+                        <i id="instaI" class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a id="what" href="https://wa.me/+989306831354">
+                        <i id="ws" class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a id="telegram" href="https://t.me/hamedpyn">
+                        <i id="tl" class="fa-brands fa-telegram"></i>
+                    </a>
+                    <a id="github" href="https://github.com/Hamedpyn">
+                        <i id="gh" class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                <div id="devText">
+                    <p>این سایت صرفا جهت تمرین و نمونه کار کدنویسی شده است</p>
+                </div>
+                <div id="devEmail">
+                    <a href="mailto:hamedpyn@gmail.com">hamedpyn@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>`
+    const thisFirstPage = document.querySelector('#thisFirstPage');
+    const booksPageContainer = document.querySelector('#booksPageContainer');
+    const booksObject = document.querySelector("#booksObject");
+    const allBtn = document.querySelector('#allBtn');
+    const bookBasket = document.querySelector('#bookBasket');
+    bookBasket.addEventListener('click', userBasket)
+    paginationGenerator()
+    setBtnPagination();
 }
 
 // Function to toggle visibility of elements
@@ -80,8 +221,6 @@ function paginationGenerator() {
         booksObject.innerHTML += booksHtml(book)
     })
 }
-// Generate initial pagination
-paginationGenerator();
 
 // Function to generate book HTML
 function booksHtml(book) {
@@ -92,15 +231,11 @@ function setBtnPagination() {
     allBtn.innerHTML = "";
     // Calculate the total number of pages
     let counter = Math.ceil(allBooks.length / rows)
-
     for (let i = 1; i < counter + 1; i++) {
         let btn = createNewBtn(i)
         allBtn.appendChild(btn)
     }
 }
-
-// Generate initial pagination buttons
-setBtnPagination();
 
 // Function to create a new pagination button
 function createNewBtn(thisPage) {

@@ -80,6 +80,7 @@ header {
     width: 50px;
     height: 50px;
     font-size: 22px;
+    cursor: pointer;
 }
 
 /* menu */
@@ -102,7 +103,7 @@ nav>ul>img {
     width: 150px;
 }
 
-nav>ul>li>span {
+nav>ul>li>span , nav>ul>li>a>span {
     cursor: pointer;
     padding-left: 20px;
     margin-right: 20px;
@@ -115,7 +116,7 @@ nav>ul>li>span {
     position: relative;
 }
 
-nav>ul>li>span::after {
+nav>ul>li>span::after , nav>ul>li>a>span::after {
     content: '';
     position: absolute;
     bottom: -57px;
@@ -141,7 +142,11 @@ nav>ul>li>span::after {
     transform: scaleX(1);
 }
 
-nav>ul>li>span:hover:after {
+.active {
+    color: #758BFD;
+}
+
+nav>ul>li>span:hover:after , nav>ul>li>a>span:hover:after {
     transform: scaleX(1);
 }
 
@@ -150,7 +155,7 @@ nav>ul>li>span>i {
     margin-right: 5px;
 }
 
-nav>ul>li>span:hover {
+nav>ul>li>span:hover , nav>ul>li>a>span:hover {
     color: #758BFD;
 }
 
@@ -1368,7 +1373,6 @@ footer {
     padding-top: 100px;
 }
 
-#spinner {
-    margin: 250px auto;
-
+#basket {
+    height: 400px;
 }
