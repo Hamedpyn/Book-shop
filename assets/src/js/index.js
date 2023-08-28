@@ -27,6 +27,39 @@ const allBooks = [
     { id: 12, booksName: "سیارات", imageSrc: "assets/images/book-11-600x600.jpg", price: 99 },
 ];
 
+// Event listener for opening book page
+booksLi.addEventListener('click', openBookPage)
+watchBookPage.addEventListener('click', openBookPage)
+
+
+// Function to open book page
+function openBookPage() {
+
+    toggleVisibility(container, spinner)
+    bodyEl.style.backgroundColor = '#fff';
+
+    setTimeout(() => {
+        spinner.style.display = 'none';
+        bodyEl.style.backgroundColor = '';
+        booksPageContainer.style.display = 'block'
+    }, 800)
+
+    thisBookPage.classList = 'active';
+
+    // Event listener for going back to the first page
+    thisFirstPage.addEventListener('click', () => {
+        toggleVisibility(booksPageContainer, spinner)
+
+        bodyEl.style.backgroundColor = '#fff';
+        setTimeout(() => {
+            spinner.style.display = 'none';
+            bodyEl.style.backgroundColor = '';
+            container.style.display = 'block'
+        }, 800)
+        firstPage.classList = 'active';
+    })
+}
+
 // Function to toggle visibility of elements
 function toggleVisibility(hide, show) {
     hide.style.display = 'none';
