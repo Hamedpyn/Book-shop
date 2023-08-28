@@ -110,5 +110,15 @@ function createNewBtn(thisPage) {
     newButton.innerHTML = thisPage
     // Add a class to the active button
     thisPage === currentPage ? newButton.classList = 'btnActive' : "";
+    newButton.addEventListener('click', () => {
+        // Update the current page
+        currentPage = thisPage;
+        // Generate the books for the new page
+        paginationGenerator();
+        // Remove the active class from the previous active button
+        document.querySelector('button.btnActive').classList = '';
+        // Add the active class to the new button
+        newButton.classList = 'btnActive';
+    })
     return newButton
 }
