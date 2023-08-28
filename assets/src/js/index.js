@@ -65,3 +65,25 @@ function toggleVisibility(hide, show) {
     hide.style.display = 'none';
     show.style.display = 'block';
 }
+
+// Pagination settings
+let currentPage = 1;
+let rows = 6;
+
+// Function to generate pagination and display books
+function paginationGenerator() {
+    booksObject.innerHTML = ''
+    let end = currentPage * rows
+    let start = end - rows
+    let books = allBooks.slice(start, end)
+    books.forEach(book => {
+        booksObject.innerHTML += booksHtml(book)
+    })
+}
+// Generate initial pagination
+paginationGenerator();
+
+// Function to generate book HTML
+function booksHtml(book) {
+    return `<div class="aBook singleBook"><div class="topBook"><img src="${book.imageSrc}"></div><div class="bottomBook"><div><span class="book-title">${book.booksName}</span><span class="bookPrice">${book.price}<span>تومان</span></span></div><button><span>افزودن به سبد خرید</span><i class="fas fa-shopping-cart"></i></button></div></div>`
+}
