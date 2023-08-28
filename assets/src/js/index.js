@@ -27,3 +27,8 @@ const allBooks = [
     { id: 12, booksName: "سیارات", imageSrc: "assets/images/book-11-600x600.jpg", price: 99 },
 ];
 
+// Function to toggle visibility of elements
+function toggleVisibility(hide, show) {
+    hide.style.display = 'none';
+    show.style.display = 'block';
+}
