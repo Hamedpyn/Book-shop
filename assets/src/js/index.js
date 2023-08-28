@@ -102,3 +102,13 @@ function setBtnPagination() {
 
 // Generate initial pagination buttons
 setBtnPagination();
+
+// Function to create a new pagination button
+function createNewBtn(thisPage) {
+    let newButton = document.createElement('button')
+    // Set the button text as the page number
+    newButton.innerHTML = thisPage
+    // Add a class to the active button
+    thisPage === currentPage ? newButton.classList = 'btnActive' : "";
+    return newButton
+}
