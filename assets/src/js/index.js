@@ -87,3 +87,18 @@ paginationGenerator();
 function booksHtml(book) {
     return `<div class="aBook singleBook"><div class="topBook"><img src="${book.imageSrc}"></div><div class="bottomBook"><div><span class="book-title">${book.booksName}</span><span class="bookPrice">${book.price}<span>تومان</span></span></div><button><span>افزودن به سبد خرید</span><i class="fas fa-shopping-cart"></i></button></div></div>`
 }
+
+function setBtnPagination() {
+    allBtn.innerHTML = "";
+    // Calculate the total number of pages
+    let counter = Math.ceil(allBooks.length / rows)
+
+    for (let i = 1; i < counter + 1; i++) {
+        let btn = createNewBtn(i)
+        console.log(btn)
+        allBtn.appendChild(btn)
+    }
+}
+
+// Generate initial pagination buttons
+setBtnPagination();
