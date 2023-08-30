@@ -36,7 +36,7 @@ function openBookPage() {
 }
 
 function booksPageHtml() {
-    bodyEl.innerHTML += `<div id="booksPageContainer">
+    bodyEl.innerHTML = `<div id="booksPageContainer">
     <header id="booksHeader">
         <div class="header">
             <div class="topHeader">
@@ -195,8 +195,7 @@ function booksPageHtml() {
     const booksPageContainer = document.querySelector('#booksPageContainer');
     const booksObject = document.querySelector("#booksObject");
     const allBtn = document.querySelector('#allBtn');
-    const bookBasket = document.querySelector('#bookBasket');
-    bookBasket.addEventListener('click', userBasket)
+    const bookBasket = document.querySelector('#bookBasket').addEventListener("click", userBasket)
     paginationGenerator()
     setBtnPagination();
 }
@@ -260,6 +259,29 @@ function createNewBtn(thisPage) {
 let mainProduct = [];
 let sum = 0;
 
+function userBasket() {
+    sum = 0
+    callBackFunc();
+    let table = document.querySelector("table");
+    let totalPrice = document.querySelector("#totalPrice");
+    table.style.display = "block"
+    totalPrice.style.display = "flex"
+    mainProduct.forEach((book) => {
+        table.innerHTML += `<tr id="tr2">
+        <td id="td1">
+            <span id="plus">+</span>
+            <input id="input" value="1" type="number">
+            <span id="min">-</span>
+        </td>
+        <td style="font-family: poppins;">${book.price}</td>
+        <td>${book.booksName}</td>
+        <td><img width="80px" src="${book.imageSrc}"></td>
+        <td><i onclick="removeItem(${book.id})" class="fa-solid fa-trash-can delete-book" data-index ="0"></i></td>
+    </tr>`;
+        removeItem()
+        calculatePrice(book)
+    });
+}
 
 function removeItem() {
     const deleteBtn = document.querySelectorAll('.delete-book')
