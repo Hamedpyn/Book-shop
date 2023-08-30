@@ -255,6 +255,11 @@ function createNewBtn(thisPage) {
         newButton.classList = 'btnActive';
     })
     return newButton
+}
+
+let mainProduct = [];
+let sum = 0;
+
 
 function removeItem() {
     const deleteBtn = document.querySelectorAll('.delete-book')
