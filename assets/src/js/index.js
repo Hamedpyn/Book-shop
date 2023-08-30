@@ -286,7 +286,9 @@ function userBasket() {
         <td><img width="80px" src="${book.imageSrc}"></td>
         <td><i onclick="removeItem(${book.id})" class="fa-solid fa-trash-can delete-book" data-index ="0"></i></td>
     </tr>`;
+        // remove item from the Basket
         removeItem()
+        // change the result after the item is deleted
         calculatePrice(book)
     });
 }
