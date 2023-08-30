@@ -256,6 +256,18 @@ function createNewBtn(thisPage) {
     })
     return newButton
 
+function removeItem() {
+    const deleteBtn = document.querySelectorAll('.delete-book')
+    deleteBtn.forEach(item => {
+        item.addEventListener('click', (event) => {
+            const index = event.target.dataset.index
+            mainProduct.splice(index, 1)
+            userBasket()
+        })
+    })
+
+}
+
 function calculatePrice(book) {
     sum += book.count * book.price
     totalPrice.innerHTML = `قیمت نهایی:  ${sum}تومان `
