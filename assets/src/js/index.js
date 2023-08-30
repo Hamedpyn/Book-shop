@@ -520,3 +520,18 @@ function basketHtml() {
     </footer>
     </div>`
 }
+
+// Function to check the Products status
+function isEmptyBasket() {
+    // if mainProduct's length is equal to 0, show an message that says your basket is empty
+    if (mainProduct.length == "0") {
+        callBackFunc();
+        let basket = document.querySelector('#basket');
+        let emptyBasket = document.createElement("div");
+        emptyBasket.textContent = "سبد خرید شما خالی است";
+        emptyBasket.style.cssText = "width: 1066px;height: 100px;border: 1px solid rgb(202 202 202);display: flex;justify-content: flex-end;align-items: center;font-size: 20px;padding-right: 29px;background-color:#f6f6f6;";
+        basket.appendChild(emptyBasket);
+    } else {
+        // if the basket is not empty, call userBasket to add the Products to the Basket
+        userBasket()
+}
