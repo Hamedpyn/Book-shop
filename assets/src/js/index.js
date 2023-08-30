@@ -265,7 +265,6 @@ let sum = 0;
 
 // Function to add Product to user Basket
 function userBasket() {
-    sum = 0
     // change the result whenever an item is deleted
     sum = 0;
     callBackFunc();
