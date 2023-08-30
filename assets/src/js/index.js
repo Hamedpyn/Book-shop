@@ -255,6 +255,13 @@ function createNewBtn(thisPage) {
         newButton.classList = 'btnActive';
     })
     return newButton
+function getProduct(event) {
+    let mainData = allBooks.find(book => {
+        return book.id === event;
+    })
+    mainProduct.push(mainData);
+}
+
 function basketHtml() {
     bodyEl.innerHTML = `<div id="userBasketPage" style="background-color: #f8f8f8;">
     <header id="booksHeader">
