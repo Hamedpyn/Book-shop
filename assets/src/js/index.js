@@ -261,6 +261,14 @@ function callBackFunc() {
     backToBookPage();
 }
 
+function backToBookPage() {
+    let bookBasketPage = document.querySelector('#basketBook').addEventListener('click', () => {
+        booksPageHtml();
+        const thisBookPage = document.querySelector('#thisBookPage');
+        thisBookPage.classList.add("active");
+    });
+};
+
 containerBasket.addEventListener('click', (event) => {
     if (mainProduct) {
         callBackFunc();
