@@ -285,8 +285,6 @@ function userBasket() {
         <td><img width="80px" src="${book.imageSrc}"></td>
         <td><i onclick="removeItem(${book.id})" class="fa-solid fa-trash-can delete-book" data-index ="0"></i></td>
     </tr>`;
-        // remove item from the Basket
-        removeItem()
         // change the result after the item is deleted
         calculatePrice(book)
     });
@@ -302,16 +300,10 @@ function userBasket() {
 }
 
 // Function to remove Item from the Basket
-function removeItem() {
-    const deleteBtn = document.querySelectorAll('.delete-book')
-    deleteBtn.forEach(item => {
-        item.addEventListener('click', (event) => {
-            const index = event.target.dataset.index
-            mainProduct.splice(index, 1)
-            // call userBasket to update the Products
-            userBasket()
-        })
-    })
+function removeItem(bookId) {
+    mainProduct = mainProduct.filter(item => item.id !== bookId)
+    // call userBasket() to update the Basket
+    userBasket()
 }
 
 // Function to calculate total price
