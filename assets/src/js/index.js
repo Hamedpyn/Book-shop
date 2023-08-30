@@ -224,7 +224,7 @@ function paginationGenerator() {
 
 // Function to generate book HTML
 function booksHtml(book) {
-    return `<div class="aBook singleBook"><div class="topBook"><img src="${book.imageSrc}"></div><div class="bottomBook"><div><span class="book-title">${book.booksName}</span><span class="bookPrice">${book.price}<span>تومان</span></span></div><button><span>افزودن به سبد خرید</span><i class="fas fa-shopping-cart"></i></button></div></div>`
+    return `<div class="aBook singleBook"><div class="topBook"><img src="${book.imageSrc}"></div><div class="bottomBook"><div><span class="book-title">${book.booksName}</span><span class="bookPrice">${book.price}<span>تومان</span></span></div><button onclick="getProduct(${book.id})"><span>افزودن به سبد خرید</span><i class="fas fa-shopping-cart"></i></button></div></div>`
 }
 
 function setBtnPagination() {
