@@ -255,6 +255,12 @@ function createNewBtn(thisPage) {
         newButton.classList = 'btnActive';
     })
     return newButton
+
+function callBackFunc() {
+    basketHtml();
+    backToBookPage();
+}
+
 containerBasket.addEventListener('click', (event) => {
     if (mainProduct) {
         callBackFunc();
