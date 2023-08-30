@@ -256,6 +256,11 @@ function createNewBtn(thisPage) {
     })
     return newButton
 
+function calculatePrice(book) {
+    sum += book.count * book.price
+    totalPrice.innerHTML = `قیمت نهایی:  ${sum}تومان `
+}
+
 function callBackFunc() {
     basketHtml();
     backToBookPage();
