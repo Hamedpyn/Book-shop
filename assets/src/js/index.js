@@ -35,6 +35,7 @@ function openBookPage() {
     thisBookPage.classList.add("active")
 }
 
+// Function to change body html to books page html
 function booksPageHtml() {
     bodyEl.innerHTML = `<div id="booksPageContainer">
     <header id="booksHeader">
@@ -256,14 +257,20 @@ function createNewBtn(thisPage) {
     return newButton
 }
 
+// to save the Products
 let mainProduct = [];
+// to calculate price
 let sum = 0;
 
+// Function to add Product to user Basket
 function userBasket() {
     sum = 0
+    // change the result whenever an item is deleted
+    sum = 0;
     callBackFunc();
     let table = document.querySelector("table");
     let totalPrice = document.querySelector("#totalPrice");
+    // change display to show ( their default display is none )
     table.style.display = "block"
     totalPrice.style.display = "flex"
     mainProduct.forEach((book) => {
@@ -283,20 +290,22 @@ function userBasket() {
     });
 }
 
+// Function to remove Item from the Basket
 function removeItem() {
     const deleteBtn = document.querySelectorAll('.delete-book')
     deleteBtn.forEach(item => {
         item.addEventListener('click', (event) => {
             const index = event.target.dataset.index
             mainProduct.splice(index, 1)
+            // call userBasket to update the Products
             userBasket()
         })
     })
-
 }
 
+// Function to calculate total price
 function calculatePrice(book) {
-    sum += book.count * book.price
+    sum += book.price
     totalPrice.innerHTML = `قیمت نهایی:  ${sum}تومان `
 }
 
@@ -334,6 +343,7 @@ function getProduct(event) {
     mainProduct.push(mainData);
 }
 
+// Function to change the body html to Basket page
 function basketHtml() {
     bodyEl.innerHTML = `<div id="userBasketPage" style="background-color: #f8f8f8;">
     <header id="booksHeader">
@@ -534,4 +544,5 @@ function isEmptyBasket() {
     } else {
         // if the basket is not empty, call userBasket to add the Products to the Basket
         userBasket()
+    }
 }
