@@ -196,7 +196,8 @@ function booksPageHtml() {
     const booksPageContainer = document.querySelector('#booksPageContainer');
     const booksObject = document.querySelector("#booksObject");
     const allBtn = document.querySelector('#allBtn');
-    const bookBasket = document.querySelector('#bookBasket').addEventListener("click", userBasket)
+    const bookBasket = document.querySelector('#bookBasket')
+    bookBasket.addEventListener("click", isEmptyBasket)
     paginationGenerator()
     setBtnPagination();
 }
@@ -322,19 +323,8 @@ function backToBookPage() {
     });
 };
 
-containerBasket.addEventListener('click', (event) => {
-    if (mainProduct) {
-        callBackFunc();
-        let basket = document.querySelector('#basket');
-        let emptyBasket = document.createElement("div");
-        emptyBasket.textContent = "سبد خرید شما خالی است";
-        emptyBasket.style.cssText = "width: 1066px;height: 100px;border: 1px solid rgb(202 202 202);display: flex;justify-content: flex-end;align-items: center;font-size: 20px;padding-right: 29px;background-color:#f6f6f6;";
-        basket.appendChild(emptyBasket);
-    } else {
-        getProduct(event)
-        userBasket()
-    }
-})
+// Event listener for isEmptyBasket
+containerBasket.addEventListener('click', isEmptyBasket)
 
 function getProduct(event) {
     let mainData = allBooks.find(book => {
