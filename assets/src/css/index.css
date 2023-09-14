@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
     font-family: 'Noto Sans Arabic', sans-serif;
@@ -103,7 +102,8 @@ nav>ul>img {
     width: 150px;
 }
 
-nav>ul>li>span , nav>ul>li>a>span {
+nav>ul>li>span,
+nav>ul>li>a>span {
     cursor: pointer;
     padding-left: 20px;
     margin-right: 20px;
@@ -116,7 +116,8 @@ nav>ul>li>span , nav>ul>li>a>span {
     position: relative;
 }
 
-nav>ul>li>span::after , nav>ul>li>a>span::after {
+nav>ul>li>span::after,
+nav>ul>li>a>span::after {
     content: '';
     position: absolute;
     bottom: -57px;
@@ -146,7 +147,8 @@ nav>ul>li>span::after , nav>ul>li>a>span::after {
     color: #758BFD;
 }
 
-nav>ul>li>span:hover:after , nav>ul>li>a>span:hover:after {
+nav>ul>li>span:hover:after,
+nav>ul>li>a>span:hover:after {
     transform: scaleX(1);
 }
 
@@ -155,7 +157,8 @@ nav>ul>li>span>i {
     margin-right: 5px;
 }
 
-nav>ul>li>span:hover , nav>ul>li>a>span:hover {
+nav>ul>li>span:hover,
+nav>ul>li>a>span:hover {
     color: #758BFD;
 }
 
@@ -733,7 +736,6 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 30px;
 }
 
 .aBook:hover .book-title {
@@ -1170,6 +1172,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    z-index: 1;
 }
 
 #dev {
@@ -1386,7 +1389,8 @@ table {
     text-align: right;
 }
 
-th , td {
+th,
+td {
     /* padding: 20px; */
     padding-left: 100px;
     padding-right: 20px;
@@ -1407,16 +1411,16 @@ table input {
     text-align: center;
 }
 
- /* Chrome, Safari, Edge, Opera */
+/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 #td1 span {
@@ -1476,5 +1480,5 @@ td i:active {
     flex-direction: column;
     align-items: flex-end;
     margin-top: 40px;
-    padding-right:  20px;
+    padding-right: 20px;
 }
