@@ -43,6 +43,25 @@ function textIndex() {
 // Call the textIndex function every 50ms using setInterval
 setInterval(textIndex, 50);
 
+let h2Elem = document.getElementById('introduceTitle');
+
+// Create a typewriter instance for the h2 element
+let typewriter = new Typewriter(h2Elem, {
+    loop: true,
+    cursor: ""
+});
+
+// Type the phrase "بهترین کتاب ها"
+typewriter.typeString('بهترین کتاب ها')
+    .pauseFor(1500) // Pause for 1.5 seconds
+    .deleteAll() // Delete all typed characters
+    .typeString("معروف ترین کتاب ها") // Type the phrase
+    .pauseFor(1500)
+    .deleteAll()
+    .typeString('<strong>پراستفاده ترین کتاب ها</strong>')
+    .pauseFor(1500)
+    .start(); // Start the typewriter effect
+
 // Function to open book page
 function openBookPage() {
     container.style.display = "none";
