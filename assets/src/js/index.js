@@ -575,3 +575,11 @@ function isEmptyBasket() {
         userBasket()
     }
 }
+
+// Swiper Js Library
+const swiper = new Swiper(".swiper", {
+    loop:true,
+    // 3 slides
+    slidesPerView: 3,
+    spaceBetween:30,
+})
