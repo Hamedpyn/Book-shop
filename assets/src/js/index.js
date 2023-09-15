@@ -591,4 +591,9 @@ const swiper = new Swiper(".swiper", {
         clickable:true,
         el:".swiper-pagination"
     },
+    // autoplay every 2500ms
+    autoplay: {
+        delay:2500,
+        disableOnInteraction:false
+    }
 })
