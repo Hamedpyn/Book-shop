@@ -582,4 +582,9 @@ const swiper = new Swiper(".swiper", {
     // 3 slides
     slidesPerView: 3,
     spaceBetween:30,
+    // set next and prev buttons
+    navigation: {
+        nextEl:".swiper-button-next",
+        prevEl:".swiper-button-prev",
+    },
 })
