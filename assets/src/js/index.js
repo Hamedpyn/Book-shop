@@ -70,6 +70,7 @@ function openBookPage() {
     booksPageHtml()
     const thisBookPage = document.querySelector('#thisBookPage');
     thisBookPage.classList.add("active")
+    window.scrollBy(0,-2000)
 }
 
 // Function to change body html to books page html
@@ -291,6 +292,7 @@ function createNewBtn(thisPage) {
         document.querySelector('button.btnActive').classList = '';
         // Add the active class to the new button
         newButton.classList = 'btnActive';
+        window.scrollBy(0,-2000)
     })
     return newButton
 }
