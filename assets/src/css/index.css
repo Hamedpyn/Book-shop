@@ -22,6 +22,7 @@ body {
     height: auto;
     background-color: #fff;
     overflow-x: hidden;
+    margin: 0px;
 }
 
 #container {
@@ -30,7 +31,6 @@ body {
     justify-content: center;
     flex-direction: column;
 }
-
 
 header {
     background-color: #f8f8f8;
