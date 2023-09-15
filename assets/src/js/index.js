@@ -4,6 +4,11 @@ const watchBookPage = document.querySelector('#watch-BookPage');
 const container = document.querySelector('#container');
 const bodyEl = document.body;
 const containerBasket = document.querySelector("#containerBasket");
+const pText = document.querySelector('#pText');
+let textWriter = 0;
+let text = `کتاب آنلاین منبعی به شکل کتاب است که فقط برای مطالعه در اینترنت در دسترس است. این کتاب با
+ایده
+رایج یک کتاب الکترونیکی متفاوت است`;
 
 // Sample book data
 const allBooks = [
@@ -24,6 +29,19 @@ const allBooks = [
 // Event listener for opening book page
 booksLi.addEventListener('click', openBookPage)
 watchBookPage.addEventListener('click', openBookPage)
+
+// Function for introduce paragraph
+function textIndex() {
+    // Check if the textWriter index is within the bounds of the text length
+    if (textWriter < text.length) {
+        let currentCharacter = text[textWriter]; // Get the current character
+        textWriter++; // Increment the textWriter index
+        pText.innerHTML += currentCharacter; // Append the current character to the HTML element
+    }
+}
+
+// Call the textIndex function every 50ms using setInterval
+setInterval(textIndex, 50);
 
 // Function to open book page
 function openBookPage() {
