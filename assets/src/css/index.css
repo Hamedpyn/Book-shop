@@ -858,6 +858,26 @@ main {
     background-color: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 40px;
+    width: 31.5% !important;
+}
+
+.swiper-slide-active {
+    scale: 1.1 !important;
+}
+
+.swiper-slide-prev , .swiper-slide-next {
+    scale: 0.9 !important;
+}
+
+.swiper-button-next , .swiper-button-prev {
+    border-radius: 40px;
+    color: #758BFD !important;
+    font-size: 1px !important;
+}
+
+.swiper-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .name {

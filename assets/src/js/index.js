@@ -582,8 +582,9 @@ function isEmptyBasket() {
 const swiper = new Swiper(".swiper", {
     loop:true,
     // 3 slides
-    slidesPerView: 3,
+    slidesPerView: "auto",
     spaceBetween:30,
+    centeredSlides:true,
     // set next and prev buttons
     navigation: {
         nextEl:".swiper-button-next",
